@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="text-align: center">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="sonhapvao">
+        </td>
+        <td>
+            <select id="chon1">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="chon2">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="inragiatri()">Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <th id="result">Result:</th>
+    </tr>
+</table>
+</body>
+<script>
+    function inragiatri() {
+        let giatrinhapvao = document.getElementById("sonhapvao").value;
+        let chon1 = document.getElementById("chon1").value;
+        let chon2 = document.getElementById("chon2").value;
+        let ketqua
+        if (chon1==chon2) {
+            ketqua=giatrinhapvao;
+        }
+        if ( chon1=="USD" && chon2=="VND") {
+            ketqua=giatrinhapvao*23000;
+        }
+        if ( chon1=="VND" && chon2=="USD") {
+            ketqua=giatrinhapvao/23000;
+        }
+        document.getElementById("result").innerHTML="Result:"+" "+ketqua;
+    }
+</script>
+</html>

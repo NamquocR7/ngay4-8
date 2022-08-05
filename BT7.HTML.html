@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<TABLE>
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+  </tr>
+  <tr>
+  <td>
+    <INPut type="text" id="nhapsovao">
+  </td>
+    <td>
+      <select id="chon1">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+    <TD>
+      <select id="chon2">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </TD>
+    <TD>
+      <button type="button" onclick="nhapgiatri()">conver</button>
+    </TD>
+</tr>
+  <tr>
+    <th id="kq">Result:
+    </th>
+  </tr>
+</TABLE>
+</body>
+<script>
+  function nhapgiatri()
+  {
+    let nhapsovao = document.getElementById('nhapsovao').value;
+    let chon1 = document.getElementById('chon1').value;
+    let chon2 = document.getElementById('chon2').value;
+    let ketqua
+    if(chon1==chon2){ketqua=nhapsovao;}
+    if(chon1=="VND" && chon2=="USD"){ketqua=nhapsovao/23000;}
+    if(chon1=="USD" && chon2=="VND"){ketqua=nhapsovao*23000;}
+    document.getElementById("kq").innerHTML="kq:"+""+ketqua;
+  }
+
+
+
+</script>
+</html>
